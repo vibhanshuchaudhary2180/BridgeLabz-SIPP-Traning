@@ -1,0 +1,19 @@
+START
+class Member
+    variable name
+    variable ID
+    variable membership_date
+
+   
+    CONSTRUCTOR(name, ID, date)
+          this.name = name
+          this.ID = ID
+          this.date = date
+
+    
+    METHOD validOrNot()
+         if(current_date > membership_date)
+            print valid
+         else
+            print invalid
+END

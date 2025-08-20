@@ -1,0 +1,45 @@
+CLASS Customer
+    VARIABLE name
+    VARIABLE address
+    VARIABLE phone
+END CLASS
+
+
+CLASS Restaurant
+    VARIABLE name
+    VARIABLE location
+    VARIABLE rating
+END CLASS
+
+
+CLASS DeliveryBoy
+    VARIABLE name
+    VARIABLE vehicle
+END CLASS
+
+
+CLASS Order
+    VARIABLE orderId
+    VARIABLE foodItems
+    OBJECT customer      
+    OBJECT restaurant    
+    OBJECT deliveryBoy   
+
+    METHOD showOrderDetails():
+        PRINT "Order ID: " + orderId
+        PRINT "Customer: " + customer.name + " (" + customer.address + ")"
+        PRINT "Restaurant: " + restaurant.name
+        PRINT "Delivery Boy: " + deliveryBoy.name + " (" + deliveryBoy.vehicle + ")"
+        PRINT "Items: " + foodItems
+END CLASS
+
+
+MAIN:
+    CREATE customer1 = new Customer("Shobhit", "Delhi", "999999")
+    CREATE restaurant1 = new Restaurant("Pizza Hut", "CP", 4.5)
+    CREATE delivery1 = new DeliveryBoy("Raj", "Bike")
+
+    CREATE order1 = new Order("O101", "Pizza, Coke", customer1, restaurant1, delivery1)
+
+    CALL order1.showOrderDetails()
+END MAIN

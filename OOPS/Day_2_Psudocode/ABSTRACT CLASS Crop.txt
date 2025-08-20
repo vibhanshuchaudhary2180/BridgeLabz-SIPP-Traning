@@ -1,0 +1,45 @@
+ABSTRACT CLASS Crop
+    VARIABLE name
+
+    CONSTRUCTOR(name):
+        this.name = name
+
+    ABSTRACT METHOD waterRequirement()
+    ABSTRACT METHOD harvest()
+END CLASS
+
+
+CLASS Rice EXTENDS Crop
+    CONSTRUCTOR():
+        CALL super("Rice")
+
+    METHOD waterRequirement():
+        PRINT "requirement of water is more"
+
+    METHOD harvest():
+        PRINT "rice is harvested after 120 days."
+END CLASS
+
+
+CLASS Wheat EXTENDS Crop
+    CONSTRUCTOR():
+        CALL super("Wheat")
+
+    METHOD waterRequirement():
+        PRINT "less requirement of water"
+
+    METHOD harvest():
+        PRINT "Wheat is harvested after 90 days."
+END CLASS
+
+
+MAIN:
+    CREATE crop1 = new Rice()
+    CREATE crop2 = new Wheat()
+
+    crop1.waterRequirement()
+    crop1.harvest()
+
+    crop2.waterRequirement()
+    crop2.harvest()
+END MAIN

@@ -1,0 +1,27 @@
+START
+class Pet 
+    variable name
+    variable age
+
+    CONSTRUCTOR(name, age)
+         this.name = name
+         this.name = name
+
+
+    METHOD makeSound()
+          print Animal make sound
+
+
+    Pet extend Dog
+        super(name, age)
+        makeSound()
+
+    Pet extend Cat
+        super(name, age)
+        makeSound()
+
+    Pet extend Bird
+        super(name, age)
+        makeSound()
+
+END

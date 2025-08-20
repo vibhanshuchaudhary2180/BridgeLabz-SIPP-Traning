@@ -1,0 +1,38 @@
+CLASS TrafficSignal
+    VARIABLE currentLight
+    CONSTANT RED_DURATION = 30
+    CONSTANT GREEN_DURATION = 40
+    CONSTANT YELLOW_DURATION = 5
+
+    CONSTRUCTOR:
+        currentLight = "RED"
+
+    METHOD changeLight():
+        IF currentLight == "RED":
+            currentLight = "GREEN"
+        ELSE IF currentLight == "GREEN":
+            currentLight = "YELLOW"
+        ELSE IF currentLight == "YELLOW":
+            currentLight = "RED"
+        ENDIF
+
+    METHOD showSignal():
+        IF currentLight == "RED":
+            PRINT "Current Light = RED (Duration = " + RED_DURATION + "s)"
+        ELSE IF currentLight == "GREEN":
+            PRINT "Current Light = GREEN (Duration = " + GREEN_DURATION + "s)"
+        ELSE IF currentLight == "YELLOW":
+            PRINT "Current Light = YELLOW (Duration = " + YELLOW_DURATION + "s)"
+        ENDIF
+
+
+MAIN:
+    CREATE object signal = new TrafficSignal()
+
+    REPEAT 6 TIMES:
+        signal.showSignal()
+        signal.changeLight()
+    END REPEAT
+MAIN END
+
+END CLASS
